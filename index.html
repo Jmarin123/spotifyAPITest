@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotifyAPI</title>
+</head>
+
+<body onload="onPageLoad()">
+    <div id="setup-page">
+        <div id="inputID">
+            <label for="userID">User ID</label>
+            <input type="text" name="userID" id="clientId">
+
+            <label for="userSecret">User Secret</label>
+            <input type="text" name="userSecret" id="clientSecret">
+
+            <input type="button" value="Request Authorization" onclick="requestAuthorization()">
+        </div>
+    </div>
+    <div id="devices-setup">
+        <div class="card" id="all-devices">
+            <label for="devices">All Devices</label>
+            <select name="devices" id="devices"></select>
+            <input type="button" value="Search For Devices" onclick="refreshDevices()">
+        </div>
+        <div class="card" id="all-playlists">
+            <label for="playlists">All Playlists</label>
+            <select name="playlists" id="playlists" onchange="setCurrentPlaylist()"></select>
+            <input type="button" value="Search For Playlists" onclick="refereshPlaylists()">
+        </div>
+
+        <div class="card" id="all-songs">
+            <label for="songs">All Songs</label>
+            <select name="songs" id="songs"></select>
+            <input type="button" value="Referesh Tracks" onclick="refereshSongs()">
+        </div>
+        <div class="card">
+            <div>
+                <input type="button" class="btn btn-dark" onclick="previous()" value="Prev">
+                <input type="button" class="btn btn-dark" onclick="play()" value="Play">
+                <input type="button" class="btn btn-dark" onclick="pause()" value="Pause">
+                <input type="button" class="btn btn-dark" onclick="next()" value="Next">
+            </div>
+            <div id="song-info">
+                <img id="albumImage"></img>
+                <p id="trackTitle"></p>
+                <p id="trackArtist"></p>
+            </div>
+            <div id="createPlaylist">
+                <input type="text" placeholder="Give your playlist a name!" id="nameForPlaylist">
+                <input type="text" placeholder="Discription" id="descriptionForPlaylist">
+                <label for="publicPlaylist">Do you wish to make it public?</label>
+                <input type="checkbox" name="publicPlaylist" id="publicPlaylist">
+                <input type="button" value="Create new platlist" onclick="createPlaylist()">
+            </div>
+            <div id="addToPlaylist">
+                <label for="listed-playlists">Select Playlist to Add Song To</label>
+                <select name="listed-playlists" id="listed-playlists"></select>
+                <input type="button" value="Add Song to Playlist" onclick="addSongToPlaylist()">
+            </div>
+        </div>
+    </div>
+    <script src="pageJS.js"></script>
+    <link rel="stylesheet" href="workingCss.css">
+</body>
+
+</html>
