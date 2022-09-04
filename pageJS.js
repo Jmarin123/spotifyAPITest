@@ -12,7 +12,7 @@ const TRACK = 'https://api.spotify.com/v1/tracks';
 const ALBUMS = 'https://api.spotify.com/v1/albums'
 const CURRENTLYPLAYING = 'https://api.spotify.com/v1/me/player/currently-playing';
 
-let redirect_uri = 'http://localhost:3000/'
+let redirect_uri = 'https://jmarin123.github.io/spotifyAPITest/'
 let client_id = '';
 let client_secret = '';
 let currentPlaylist;
